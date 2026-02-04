@@ -107,3 +107,26 @@ function startFireworks() {
     ctx.fill();
   }, 800);
 }
+let startX = 0;
+let endX = 0;
+
+const swipeArea = document.getElementById("swipeArea");
+
+swipeArea.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+swipeArea.addEventListener("touchend", e => {
+  endX = e.changedTouches[0].clientX;
+  handleSwipe();
+});
+
+// Optional: allow tap also
+swipeArea.addEventListener("click", unlock);
+
+function handleSwipe() {
+  if (endX - startX > 80) { // swipe right
+    unlock();
+  }
+}
+
