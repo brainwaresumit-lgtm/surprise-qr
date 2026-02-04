@@ -1,0 +1,227 @@
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff9ad5, #6ec6ff);
+}
+
+/* =====================
+   SCREEN HANDLING
+===================== */
+.screen {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* =====================
+   LOCK SCREEN
+===================== */
+#lock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lock-time {
+  font-size: 64px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.lock-date {
+  font-size: 18px;
+  color: #f3f3f3;
+  margin-bottom: 50px;
+}
+
+/* =====================
+   TEXT STYLES
+===================== */
+h1, h2 {
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+
+p {
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#typing {
+  min-height: 70px;
+}
+
+/* =====================
+   COUNTDOWN
+===================== */
+#countdown {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* =====================
+   INPUT & BUTTONS
+===================== */
+input {
+  width: 80%;
+  max-width: 320px;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+button {
+  background: linear-gradient(45deg, #ff5fb2, #6a9cff);
+  border: none;
+  padding: 14px 26px;
+  border-radius: 35px;
+  font-size: 16px;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* =====================
+   FLOWER RAIN
+===================== */
+.flowers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.flowers span {
+  position: absolute;
+  top: -10%;
+  font-size: 24px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* =====================
+   SLIDESHOW
+===================== */
+.slideshow {
+  position: relative;
+  width: 90%;
+  max-width: 340px;
+  margin: auto;
+}
+
+.slideshow img {
+  width: 100%;
+  border-radius: 22px;
+  margin-bottom: 15px;
+  animation: slideFade 9s infinite;
+}
+
+/* =====================
+   SPECIAL TEXT
+===================== */
+.special {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* =====================
+   FIREWORKS
+===================== */
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideFade {
+  0% { opacity: 1; }
+  33% { opacity: 0; }
+  66% { opacity: 1; }
+}
+
+/* =====================
+   MOBILE OPTIMIZATION
+===================== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 12px 22px;
+  }
+}

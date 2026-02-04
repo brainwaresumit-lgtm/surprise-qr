@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Petni 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOCK SCREEN -->
+<section id="lock" class="screen active">
+  <div class="lock-time" id="time"></div>
+  <div class="lock-date" id="date"></div>
+  <button onclick="unlock()">Swipe to unlock 💗</button>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="screen">
+  <h2>🔐 Only For You</h2>
+  <input type="password" id="password" placeholder="Enter secret password">
+  <button onclick="login()">Enter 💙</button>
+</section>
+
+<!-- WELCOME -->
+<section id="welcome" class="screen">
+  <div class="flowers"></div>
+  <h1 id="typing"></h1>
+  <p>Something special is waiting for you 💗</p>
+  <div id="countdown"></div>
+  <button onclick="goMain()">Open Surprise 🎁</button>
+</section>
+
+<!-- MAIN -->
+<section id="main" class="screen">
+  <h1>Happy Valentine’s Day<br>My Lovest Petni 😘😘😇❤️</h1>
+  <button onclick="showMemories()">📸 Our Memories</button>
+  <button onclick="showValentine()">💝 My Valentine</button>
+</section>
+
+<!-- MEMORIES -->
+<section id="memories" class="screen">
+  <h2>Our Memories 💕</h2>
+  <div class="slideshow">
+    <img src="images/image1.jpeg">
+    <img src="images/image2.jpeg">
+    <img src="images/image3.jpeg">
+    <img src="images/image4.jpeg">
+  </div>
+  <button onclick="back()">⬅ Back</button>
+</section>
+
+<!-- VALENTINE -->
+<section id="valentine" class="screen">
+  <h2>I hate you my cutest petni 😘❤️</h2>
+  <p class="special">
+    You are my peace, my madness, my forever.  
+    Sudhu tor e jonno amar sob kichu 💙
+  </p>
+  <button onclick="playSong()">🎵 Sudhu Tor E Jonno</button>
+  <button onclick="back()">⬅ Back</button>
+</section>
+
+<canvas id="fireworks"></canvas>
+<audio id="song" src="music_obhijog.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
