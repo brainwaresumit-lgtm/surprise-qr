@@ -139,3 +139,71 @@ button:active {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+/* Hate Love Text */
+.hate-love {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  animation: glow 2s infinite alternate;
+}
+
+.hate-love span {
+  margin-left: 6px;
+  display: inline-block;
+  animation: heartbeat 1.5s infinite;
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #ff7eb3, 0 0 10px #ff7eb3;
+  }
+  to {
+    text-shadow: 0 0 15px #ff3f9e, 0 0 25px #ff3f9e;
+  }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+.side-photo {
+  position: fixed;
+  top: 20%;
+  transform: translateY(-50%);
+  width: 220px;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+.side-photo img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(255, 105, 180, 0.4);
+  animation: floatPhoto 4s ease-in-out infinite;
+}
+
+/* Left side */
+.left-photo {
+  left:20px;
+}
+
+/* Right side */
+.right-photo {
+  right: 20px;
+}
+
+/* Floating animation */
+@keyframes floatPhoto {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
