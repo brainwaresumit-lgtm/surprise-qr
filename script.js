@@ -1,18 +1,18 @@
-/* ===== SCREEN ELEMENTS ===== */
+
 const intro = document.getElementById("intro");
 const login = document.getElementById("login");
 const main = document.getElementById("main");
 
-/* ===== UNLOCK BUTTON (INTRO → LOGIN) ===== */
+
 document.getElementById("unlockBtn").addEventListener("click", () => {
   intro.classList.remove("active");
   login.classList.add("active");
 });
 
-/* ===== PASSWORD ===== */
-const correctPassword = "petni"; // 🔐 CHANGE PASSWORD HERE
 
-/* ===== LOGIN BUTTON (LOGIN → MAIN) ===== */
+const correctPassword = "iamyourpetni"; 
+
+
 document.getElementById("loginBtn").addEventListener("click", () => {
   const input = document.querySelector("#login input");
   const enteredPassword = input.value.trim();
@@ -27,7 +27,7 @@ document.getElementById("loginBtn").addEventListener("click", () => {
   }
 });
 
-/* ===== MEMORY SECTION ===== */
+
 document.getElementById("openMemory").addEventListener("click", () => {
   document.getElementById("memorySection").classList.toggle("hidden");
   document.getElementById("valentineMsg").classList.add("hidden");
@@ -38,7 +38,7 @@ document.getElementById("myValentine").addEventListener("click", () => {
   document.getElementById("memorySection").classList.add("hidden");
 });
 
-/* ===== MEMORY IMAGES ===== */
+
 const images = {
   1: "images/image1.jpeg",
   2: "images/image2.jpeg",
@@ -57,7 +57,7 @@ function showMemory(id) {
   box.appendChild(img);
 }
 
-/* ===== FALLING HEARTS & FLOWERS ===== */
+
 function startFallingAnimation() {
   const container = document.getElementById("falling-container");
   const symbols = ["❤️", "💗", "🌸", "🌹"];
