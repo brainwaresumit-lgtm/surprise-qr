@@ -207,3 +207,113 @@ button:active {
     transform: translateY(0px);
   }
 }
+/* 📸 Bottom images layout */
+.bottom-images {
+  max-width: 1100px;
+  margin: 80px auto 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.bottom-images img {
+  width: 48%;
+  border-radius: 22px;
+  box-shadow: 0 14px 35px rgba(255,105,180,0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover effect */
+.bottom-images img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 45px rgba(255,105,180,0.45);
+}
+
+/* 📱 Mobile responsive */
+@media (max-width: 768px) {
+  .bottom-images {
+    flex-direction: column;
+  }
+
+  .bottom-images img {
+    width: 100%;
+  }
+}
+/* 💕 Floating bottom images */
+.floating-photo {
+  position: fixed;
+  bottom: 30px;
+  width: 160px;
+  z-index: 2;
+  opacity: 0.95;
+}
+
+.floating-photo img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(255, 105, 180, 0.4);
+  animation: floatSoft 4s ease-in-out infinite;
+}
+
+/* Left & Right positioning */
+.bottom-left {
+  left: 25px;
+}
+
+.bottom-right {
+  right: 25px;
+}
+
+/* Floating animation */
+@keyframes floatSoft {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* 📱 Hide on small screens */
+@media (max-width: 768px) {
+  .floating-photo {
+    display: none;
+  }
+}/* 🐭 Fixed bottom characters */
+.character {
+  position: fixed !important;
+  bottom: 20px !important;
+  width: 150px;
+  z-index: 999;
+  pointer-events: none; /* prevents blocking buttons */
+}
+
+/* Images */
+.character img {
+  width: 100%;
+  height: auto;
+  animation: floatCharacter 3.5s ease-in-out infinite;
+}
+
+/* Left side */
+.masha {
+  left: 20px;
+}
+
+/* Right side */
+.tomjerry {
+  right: 20px;
+}
+
+/* Floating animation */
+@keyframes floatCharacter {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* Hide on very small screens */
+@media (max-width: 600px) {
+  .character {
+    display: none;
+  }
+}
+
