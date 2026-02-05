@@ -1,29 +1,44 @@
+/* ===== SCREEN ELEMENTS ===== */
 const intro = document.getElementById("intro");
 const login = document.getElementById("login");
 const main = document.getElementById("main");
 
-document.getElementById("unlockBtn").onclick = () => {
+/* ===== UNLOCK BUTTON (INTRO → LOGIN) ===== */
+document.getElementById("unlockBtn").addEventListener("click", () => {
   intro.classList.remove("active");
   login.classList.add("active");
-};
+});
 
-document.getElementById("loginBtn").onclick = () => {
-  login.classList.remove("active");
-  main.classList.add("active");
-  startFallingAnimation();
-};
+/* ===== PASSWORD ===== */
+const correctPassword = "petni"; // 🔐 CHANGE PASSWORD HERE
 
-document.getElementById("openMemory").onclick = () => {
+/* ===== LOGIN BUTTON (LOGIN → MAIN) ===== */
+document.getElementById("loginBtn").addEventListener("click", () => {
+  const input = document.querySelector("#login input");
+  const enteredPassword = input.value.trim();
+
+  if (enteredPassword === correctPassword) {
+    login.classList.remove("active");
+    main.classList.add("active");
+    startFallingAnimation();
+  } else {
+    alert("Wrong password 😜 Try again!");
+    input.value = "";
+  }
+});
+
+/* ===== MEMORY SECTION ===== */
+document.getElementById("openMemory").addEventListener("click", () => {
   document.getElementById("memorySection").classList.toggle("hidden");
   document.getElementById("valentineMsg").classList.add("hidden");
-};
+});
 
-document.getElementById("myValentine").onclick = () => {
+document.getElementById("myValentine").addEventListener("click", () => {
   document.getElementById("valentineMsg").classList.toggle("hidden");
   document.getElementById("memorySection").classList.add("hidden");
-};
+});
 
-/* Memory Images */
+/* ===== MEMORY IMAGES ===== */
 const images = {
   1: "images/image1.jpeg",
   2: "images/image2.jpeg",
@@ -34,12 +49,15 @@ const images = {
 function showMemory(id) {
   const box = document.getElementById("memoryImage");
   box.innerHTML = "";
+
   const img = document.createElement("img");
   img.src = images[id];
+  img.alt = "Our Memory";
+
   box.appendChild(img);
 }
 
-/* Falling Animation */
+/* ===== FALLING HEARTS & FLOWERS ===== */
 function startFallingAnimation() {
   const container = document.getElementById("falling-container");
   const symbols = ["❤️", "💗", "🌸", "🌹"];
@@ -51,16 +69,19 @@ function startFallingAnimation() {
     item.style.left = Math.random() * 100 + "vw";
     item.style.fontSize = (12 + Math.random() * 10) + "px";
     item.style.animationDuration = (5 + Math.random() * 4) + "s";
+
     container.appendChild(item);
     setTimeout(() => item.remove(), 9000);
   }, 400);
 }
-const song = document.getElementById("loveSong");
+const songBtn = document.getElementById("songBtn");
+const loveSong = document.getElementById("loveSong");
 
-document.getElementById("songBtn").addEventListener("click", () => {
-  if (song.paused) {
-    song.play();
-  } else {
-    song.pause();
-  }
-});
+if (songBtn && loveSong) {
+  songBtn.addEventListener("click", () => {
+    loveSong.play().catch(err => {
+      console.log("Audio play blocked:", err);
+    });
+  });
+}
+
