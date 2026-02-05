@@ -12,7 +12,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Screens */
+
 .screen {
   display: none;
   min-height: 100vh;
@@ -26,7 +26,7 @@ body {
   flex-direction: column;
 }
 
-/* Intro Card */
+
 .intro-card {
   width: 90%;
   max-width: 360px;
@@ -44,7 +44,7 @@ body {
   margin-bottom: 25px;
 }
 
-/* Inputs & Buttons */
+
 input {
   width: 100%;
   padding: 12px;
@@ -70,7 +70,7 @@ button:active {
   transform: scale(0.96);
 }
 
-/* Main Page */
+
 .main-title {
   color: white;
   font-size: 1.8rem;
@@ -85,7 +85,7 @@ button:active {
   margin-bottom: 20px;
 }
 
-/* Memory Section */
+
 .hidden {
   display: none;
 }
@@ -110,7 +110,7 @@ button:active {
   animation: zoom 0.5s ease;
 }
 
-/* Falling Hearts & Flowers */
+
 #falling-container {
   position: fixed;
   inset: 0;
@@ -139,7 +139,7 @@ button:active {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
-/* Hate Love Text */
+
 .hate-love {
   color: #fff;
   font-size: 1.3rem;
@@ -154,7 +154,7 @@ button:active {
   animation: heartbeat 1.5s infinite;
 }
 
-/* Animations */
+
 @keyframes glow {
   from {
     text-shadow: 0 0 5px #ff7eb3, 0 0 10px #ff7eb3;
@@ -185,17 +185,17 @@ button:active {
   animation: floatPhoto 4s ease-in-out infinite;
 }
 
-/* Left side */
+
 .left-photo {
   left:20px;
 }
 
-/* Right side */
+
 .right-photo {
   right: 20px;
 }
 
-/* Floating animation */
+
 @keyframes floatPhoto {
   0% {
     transform: translateY(0px);
