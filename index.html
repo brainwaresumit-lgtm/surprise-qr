@@ -2,45 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Valentine 💖</title>
+  <title>My Valentine 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- FALLING EFFECT -->
+<div id="falling-container"></div>
+
 <!-- INTRO SCREEN -->
 <div id="intro" class="screen active">
-  <h1 class="intro-text">Hey Pagli 💖</h1>
-  <button id="unlockBtn">Unlock</button>
+  <div class="intro-card">
+    <h1 class="intro-text">Hey Pagli ✨💖</h1>
+    <button id="unlockBtn">Unlock</button>
+  </div>
 </div>
 
 <!-- LOGIN SCREEN -->
 <div id="login" class="screen">
-  <h2>Only for You 💕</h2>
-  <input type="password" placeholder="Enter Love Code">
-  <button id="loginBtn">Enter</button>
+  <div class="intro-card">
+    <h2>Only for You 💕</h2>
+    <input type="password" placeholder="Enter secret code">
+    <button id="loginBtn">Enter</button>
+  </div>
 </div>
 
-<!-- MAIN PAGE -->
+<!-- MAIN SCREEN -->
 <div id="main" class="screen">
-  <h1>Happy Valentine's Day My Lovest Petni 😘❤️</h1>
+  <h1 class="main-title">
+    Happy Valentine's Day My Lovest Petni 😘😘😇❤️
+  </h1>
 
-  <button class="memory-btn" id="openMemory">Our Memories 💞</button>
+  <div class="btn-group">
+    <button id="openMemory">📸 Our Memories</button>
+    <button id="myValentine">💌 My Valentine</button>
+  </div>
 
   <!-- MEMORY SECTION -->
   <div id="memorySection" class="hidden">
     <h2>Our Little Memories ✨</h2>
 
     <div class="quotes">
-      <button onclick="showMemory(1)">From strangers to forever</button>
-      <button onclick="showMemory(2)">Every smile has you</button>
-      <button onclick="showMemory(3)">You are my peace</button>
-      <button onclick="showMemory(4)">Still choosing you</button>
+      <button onclick="showMemory(1)">Tor hasir modhhe santi khuje pai</button>
+      <button onclick="showMemory(2)">Hasle tor ei duto chokh amr banchar karon</button>
+      <button onclick="showMemory(3)">ebhabei eksonge sobsomoy thakte chai</button>
+      <button onclick="showMemory(4)">amr ses obdi ebhabei toke niye katiye dite chai</button>
     </div>
 
     <div id="memoryImage"></div>
   </div>
+
+  <!-- VALENTINE MESSAGE -->
+  <div id="valentineMsg" class="hidden">
+    <h2>I hate you my cutest petni 😘❤️</h2>
+    <p>Sudhu tor e jonno ei bhalobasha...</p>
+    <button id="songBtn">🎵 toke niye sob obhijog</button>
+  </div>
 </div>
+<audio id="loveSong" preload="auto">
+  <source src="music_obhijog.mp3" type="audio/mpeg">
+</audio>
+
 
 <script src="script.js"></script>
+
 </body>
 </html>
