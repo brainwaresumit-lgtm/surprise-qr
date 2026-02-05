@@ -6,85 +6,90 @@
 }
 
 body {
-  height: 100vh;
-  background: linear-gradient(135deg, #ff9ad5, #9bbcff);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffb6e6, #c7d2ff);
+  text-align: center;
+  overflow-x: hidden;
 }
 
+/* Screens */
 .screen {
   display: none;
-  text-align: center;
-  width: 100%;
-  padding: 20px;
+  min-height: 100vh;
+  padding: 30px 15px;
 }
 
 .active {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+/* Intro Card */
+.intro-card {
+  width: 90%;
+  max-width: 360px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  padding: 40px 25px;
+  box-shadow: 0 25px 60px rgba(255,105,180,0.35);
+  animation: popIn 0.8s ease;
+}
+
+.intro-text {
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 25px;
+}
+
+/* Inputs & Buttons */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 16px;
+  border: none;
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 18px;
+  border: none;
+  background: linear-gradient(135deg, #ff5fa2, #ff8ccf);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(255,95,162,0.5);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* Main Page */
+.main-title {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Memory Section */
 .hidden {
   display: none;
 }
 
-/* INTRO */
-.intro-text {
-  font-size: 3rem;
-  color: white;
-  animation: fadeIn 2s ease;
-  margin-bottom: 20px;
-}
-
-#unlockBtn {
-  padding: 14px 40px;
-  font-size: 1.1rem;
-  border-radius: 30px;
-  border: none;
-  background: linear-gradient(135deg, #ff5fa2, #ff87c2);
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(255,95,162,0.5);
-}
-
-/* LOGIN */
-#login input {
-  padding: 12px;
-  width: 220px;
-  border-radius: 20px;
-  border: none;
-  margin: 15px 0;
-}
-
-#login button {
-  padding: 10px 30px;
-  border-radius: 20px;
-  border: none;
-  background: #ff5fa2;
-  color: white;
-  cursor: pointer;
-}
-
-/* MAIN */
-#main h1 {
-  color: white;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.memory-btn {
-  padding: 12px 30px;
-  border-radius: 25px;
-  border: none;
-  background: #ff5fa2;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-/* MEMORY */
 .quotes {
   display: flex;
   flex-wrap: wrap;
@@ -94,28 +99,43 @@ body {
 }
 
 .quotes button {
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: none;
-  background: linear-gradient(135deg, #ff7eb3, #ff758c);
-  color: white;
-  cursor: pointer;
+  width: auto;
+  padding: 10px 18px;
 }
 
 #memoryImage img {
-  width: 280px;
+  width: 260px;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.3);
   animation: zoom 0.5s ease;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; }
+/* Falling Hearts & Flowers */
+#falling-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fall-item {
+  position: absolute;
+  top: -20px;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  from { transform: translateY(-30px) rotate(0); }
+  to { transform: translateY(105vh) rotate(360deg); }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 @keyframes zoom {
-  from { transform: scale(0.85); opacity: 0; }
+  from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
