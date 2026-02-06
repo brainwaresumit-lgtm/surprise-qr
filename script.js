@@ -10,7 +10,7 @@ document.getElementById("unlockBtn").addEventListener("click", () => {
 });
 
 
-const correctPassword = "iamyourpetni"; 
+const correctPassword = "bador+petni"; 
 
 
 document.getElementById("loginBtn").addEventListener("click", () => {
@@ -84,4 +84,5 @@ if (songBtn && loveSong) {
     });
   });
 }
+
 
